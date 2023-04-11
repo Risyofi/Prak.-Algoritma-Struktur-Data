@@ -1,5 +1,5 @@
 from Lat_4_2 import Daftar
-
+'''
 def mergeSort(A):
     if len(A) > 1:
         mid = len(A) // 2
@@ -37,7 +37,7 @@ print('==== mergerSort by NIM ====')
 mergeSort(Daftar)
 for mhs in Daftar:
     print(mhs.nama, mhs.NIM, mhs.kotaTinggal, mhs.uangSaku)
-
+'''
 
 def quickSort(A):
     quickSortBantu(A, 0, len(A) - 1)
@@ -74,13 +74,13 @@ def partisi(A, awal, akhir):
     A[penandaKanan] = temp 
 
     return penandaKanan
-
+'''
 ## Output
 print('\n==== quickSort by NIM ====')
 quickSort(Daftar)
 for mhs in Daftar:
     print(mhs.nama, mhs.NIM, mhs.kotaTinggal, mhs.uangSaku)
-
+'''
 
 def mergeSortNew(A):
     mergeSortBantu(A, 0, len(A)-1)
@@ -128,8 +128,8 @@ def merge(A, awal, mid, akhir):
         j += 1
         k += 1
 '''
-print('==== mergerSort V2 by NIM ====')
-mergeSort(Daftar)
+print('\n==== mergerSort V2 by NIM ====')
+mergeSortNew(Daftar)
 for mhs in Daftar:
     print(mhs.nama, mhs.NIM, mhs.kotaTinggal, mhs.uangSaku)
 '''
@@ -196,9 +196,76 @@ def medianOfThree(A, awal, akhir):
     return A[mid]
 
 '''
-print('\n==== quickSort by NIM ====')
+print('\n==== quickSort V2 by NIM ====')
 quickSortNew(Daftar)
 for mhs in Daftar:
     print(mhs.nama, mhs.NIM, mhs.kotaTinggal, mhs.uangSaku)
 '''
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def linkedList(head):
+    if not head or not head.next:
+        return head
+    
+    mid = getMiddle(head)
+    left = head
+    right = mid.next
+    mid.next = None
+    
+    left = linkedList(left)
+    right = linkedList(right)
+    
+    return merge(left, right)
+
+def merge(left, right):
+    dummy = Node(0)
+    tail = dummy
+    
+    while left and right:
+        if left.data.NIM < right.data.NIM:
+            tail.next = left
+            left = left.next
+        else:
+            tail.next = right
+            right = right.next
+        
+        tail = tail.next
+    
+    if left:
+        tail.next = left
+    
+    if right:
+        tail.next = right
+    
+    return dummy.next
+
+def getMiddle(head):
+    if not head:
+        return head
+    
+    slow = head
+    fast = head
+    
+    while fast.next and fast.next.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow
+
+## Output
+## membuat linked list dari object MhsTIF
+head = Node(Daftar[0])
+current = head
+for i in range(1, len(Daftar)):
+    current.next = Node(Daftar[i])
+    current = current.next
+## mengakses linked list
+current = linkedList(head)
+while current:
+    print(current.data.nama, current.data.NIM, current.data.kotaTinggal, current.data.uangSaku)
+    current = current.next
 
