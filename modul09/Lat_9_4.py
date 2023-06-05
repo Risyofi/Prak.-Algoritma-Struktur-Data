@@ -18,3 +18,23 @@ b.kiri = d; b.kanan = e
 c.kiri = f; c.kanan = g
 e.kiri = h
 g.kanan = i
+
+
+# b
+print("pohon biner b")
+a.kiri = b; a.kanan = c
+b.kiri = d; b.kanan = e
+e.kiri = g
+g.kanan = h
+h.kiri = i
+c.kanan = f
+
+# c
+print("pohon biner c")
+a.kanan = b
+b.kanan = c
+c.kiri = d
+d.kanan = e
+e.kiri = f
+f.kanan g
+g.kiri = h
