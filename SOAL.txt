@@ -1,0 +1,63 @@
+QUIZZ 1
+1. Buatlah fungsi pengecekan email, dengan hasil yang diharapkan sebagai berikut:
+    - mengandung '@'
+    - tidak boleh mengandung karakter spesial kecuali '.'
+    - format email yang benar [.com; .id; .net]
+
+    contoh input:
+    joko.widodo@example.com -> valid password
+    joko$widodo@example.com -> invalid password
+    joko-widodo99@example.com -> invalid password
+
+2. Buatlah fungsi pengecekan kata sandi, dengan ketentuan dan hasil berikut :
+    - kata sandi minimal 8 karakter
+    - kata sandi maksimal 32 karakter
+    - harus memiliki angka
+    - harus memiliki huruf kapital dan huruf kecuali
+    - harus memiliki karakter spesial
+    
+    contoh input:
+    jokowi -> invalid password
+    jokowidodojokowidodojokowidodo2024  -> invalid password
+    Jokowidodo2024 -> invalid password
+    Jokowidodo-2024 -> valid password
+
+3. Buatlah fungsi insert pada sebuah binary tree dengan ketentuan:
+    - bilangan  yang lebih kecil menjadi phon kiri
+    - bilangan yang lebih besar menjadi pohon kanan
+
+4. Buatlah fungsi untuk menampilkan :
+    - inorder, preorder, postorder traversal
+    - level-order traversal
+
+
+QUIZZ 2
+1. menggunakan regex untuk:
+    a. menemukan nama/nim dalam email ums pada kumpulan array berikut:
+    array = [
+    'L200200078@student.ums.ac.id',
+    'L200200126@student.ums.ac.id',
+    'L200200055@gmail.com',
+    'L200210235@student.ums.ac.id',
+    'L200210109@student.ums.ac.id',
+    'L200210028@yahoo.id',
+    'L20022099@student.ums.ac.id',
+    ]
+
+    optional: hanya tampilkan nim yang berdomain ums, atau kelompokan hasil berdasarkan domain.
+    b. temukan kata init dalam file README.txt.dan ganti semua kata 'fix' menjadi 'fixing' atau kata lain
+
+2. Tentukan urutan dalam preorder, inorder, postorder untuk 'Teknik Informatika'
+    note: susun binary tree sedemikian rupa hingga mendapatkan hasil traversal tersebut.
+
+
+UAS 2022
+1. gunakan konsep regex untuk menemukan:
+    string: nama_mahasiswa dan email (tampilkan email lengkap)
+    temukan kata Bro- dalam file help yang ada di idle pyehon (salin dalam bentuk teks)
+
+2. dalam pohon biner tentukan
+    urutan nama lengkap dalam preorder, inorder, dan postorder
+    urutan nim dalam preorder, inorder, dan postorder
+
+3. lakukan analisis algoritma dalam penjumlahan bilangan 1 sampai n, dengan n = 1500000. lakukan iterasi 10 kali sampai 1/1000000000 t
