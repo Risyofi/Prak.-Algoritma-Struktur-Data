@@ -1,25 +1,9 @@
-import timeit
-import matplotlib.pyplot as plt
+from timeit import timeit
 
-def kalangBersusuh(n):
-    for i in range(n):
-        for j in range(n):
-            i + j
+print(timeit('sqrt(2)', 'from math import sqrt', number=10000))
+print(timeit('sqrt(2)', 'from math import sqrt', number=100000))
+print(timeit('sqrt(2)', 'from math import sqrt', number=1000000))
 
-def ujiKalangBersusuh(n):
-    ls = []
-    jangkauan = range(1, n+1)
-    siap = "from __main__ import kalangBersusuh"
-    for i in jangkauan:
-        print('i = ', i)
-        t = timeit.timeit("kalangBersusuh(" + str(i) +")", setup = siap, number = 1)
-        ls.append(t)
-    return ls
-
-n = 1000
-LS = ujiKalangBersusuh(n)
-
-plt.plot(LS)
-skala = 7700000
-plt.plot([x*x/skala for x in range(1, n+1)])
-plt.show
+print(timeit('1+2'))
+print(timeit('sin(pi/3)', setup='from math import sin, pi',))
+print(timeit('sin(1.047)', setup='from math import sin',))

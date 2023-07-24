@@ -1,0 +1,44 @@
+from No_3 import *
+
+def inorder_traversal(root):
+    if root is not None:
+        inorder_traversal(root.left)
+        print(root.value, end=" ")
+        inorder_traversal(root.right)
+
+def preorder_traversal(root):
+    if root is not None:
+        print(root.value, end=" ")
+        preorder_traversal(root.left)
+        preorder_traversal(root.right)
+
+def postorder_traversal(root):
+    if root is not None:
+        postorder_traversal(root.left)
+        postorder_traversal(root.right)
+        print(root.value, end=" ")
+        
+def level_order_traversal(root):
+    if root is None:
+        return
+    queue = []
+    queue.append(root)
+    while queue:
+        level_size = len(queue)
+        for _ in range(level_size):
+            node = queue.pop(0)
+            print(node.value, end=" ")
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        print()
+
+print("Preorder Traversal:")
+preorder_traversal(root)
+print("\n\nInorder Traversal:")
+inorder_traversal(root)
+print("\n\nPostorder Traversal:")
+postorder_traversal(root)
+print("\n\nLevelorder Traversal:")
+level_order_traversal(root)

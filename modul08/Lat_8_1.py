@@ -1,7 +1,8 @@
-from Stack import Stack
+from class_stack import Stack
+print()
 prompt = 'Masukkan bilangan positif (<0 untuk mengakhiri): '
 myStack = Stack()
-value = int(input( prompt ))
+value = int(input(prompt))
 while value >= 0 :
     myStack.push(value)
     value = int(input(prompt))
@@ -9,3 +10,5 @@ while not myStack.isEmpty():
     value = myStack.pop()
     print(value)
     
+print()
+print()
